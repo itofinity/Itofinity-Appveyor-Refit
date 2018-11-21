@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AppVeyor REST API
+
+        AppVeyor is a hosted continuous integration service which runs on Microsoft Windows.  The AppVeyor REST API provides a RESTful way to interact with the AppVeyor service.  This includes managing projects, builds, deployments, and the teams that build them.  Additional help and discussion of the AppVeyor REST API is available at http://help.appveyor.com/discussions  This Swagger definition is an **unofficial** description of the AppVeyor REST API maintained at https://github.com/kevinoid/appveyor-swagger Please report any issues or suggestions for this Swagger definition at https://github.com/kevinoid/appveyor-swagger/issues/new  #### API Conventions  Fields which are missing from update operations (`PUT` requests) are typically reset to their default values.  So although most fields are not technically required, they should usually be specified in practice. 
+
+    OpenAPI spec version: 0.20181117.0
+    Contact: team@appveyor.com
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+        <HasSharedItems>true</HasSharedItems>
+        <SharedGUID>{62C1E87C-E3FD-4372-9009-2BBB1A76377A}</SharedGUID>
+    </PropertyGroup>
+    <PropertyGroup Label="Configuration">
+        <Import_RootNamespace>Itofinity.Appveyor.Refit</Import_RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="$(MSBuildThisFileDirectory)Client\ApiClient.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Api\BuildApi.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Api\CollaboratorApi.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Api\DeploymentApi.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Api\EnvironmentApi.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Api\ProjectApi.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Api\RoleApi.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Api\UserApi.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\AccessRightName.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\AceAccessRight.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\AceAccessRightDefinition.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\Artifact.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ArtifactModel.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ArtifactType.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\BuildCloudName.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\BuildLookupModel.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\BuildMessage.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\BuildMessageCategory.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\BuildMode.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\BuildNotificationFrequency.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\BuildStartRequest.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\BuildWorkerImage.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\BuildWorkerImageName.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\CollaboratorAddition.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\CollaboratorUpdate.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeployMode.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentCancellation.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentEnvironmentAddition.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentEnvironmentDeploymentsResults.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentEnvironmentLookupModel.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentEnvironmentProject.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentEnvironmentSettings.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentEnvironmentSettingsResults.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentLookupModel.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentNotificationFrequency.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentProvider.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentProviderType.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentStartRequest.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\EncryptRequest.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\Error.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\GroupName.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\GroupPermissions.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\HostEntry.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\HttpMethodRestricted.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\MSBuildVerbosity.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\NotificationProviderSettings.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\NotificationProviderType.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\NotificationSettings.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\NotificationSettingsType.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\OSServiceName.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\OSType.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\PermissionName.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\PermissionState.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\PlatformName.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectAddition.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectBranchesMode.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectBuildNumberUpdate.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectBuildResults.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectConfiguration.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectConfigurationOperatingSystem.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectConfigurationPlatform.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectConfigurationServices.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectConfigurationTestCategoriesMatrix.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectDeployment.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectDeploymentsResults.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectHistory.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectLookupModel.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectSettingsResults.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\RepositoryAuthenticationType.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\RepositoryProvider.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\RepositoryScm.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\RoleAce.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\RoleAddition.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\Script.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ScriptLanguage.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\SecurityDescriptor.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\Status.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\StoredNameValue.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\StoredNameValueMatrix.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\StoredValue.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\StringValueObject.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\TestMode.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\Timestamped.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\UnknownType.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\UserAccountRolesResults.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\UserAccountSettings.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\UserAddition.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\Build.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\Deployment.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentEnvironment.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\EnvironmentDeploymentModel.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\Job.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\NuGetFeed.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\Project.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectDeploymentModel.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\Role.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\UserAccount.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\BuildJob.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentEnvironmentWithSettings.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\DeploymentJob.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\ProjectWithConfiguration.cs" />
+        <Compile Include="$(MSBuildThisFileDirectory)Model\RoleWithGroups.cs" />
+    </ItemGroup>
+</Project>
