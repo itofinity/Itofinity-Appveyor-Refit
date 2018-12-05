@@ -41,7 +41,7 @@ after_build:
 
 artifacts:
   - path: '**\*$(APPVEYOR_BUILD_VERSION).nupkg'
-  - path: '.\src\Itofinity.Appveyor.Cli\$(configuration)\netcoreapp2.1\win-x64\publish'
+  - path: '.\src\Itofinity.Appveyor.Cli\bin\$(configuration)\netcoreapp2.1\win-x64\publish'
     name: apv-cli-v$(APPVEYOR_BUILD_VERSION)-$(configuration)-win-x64
     type: zip
  
