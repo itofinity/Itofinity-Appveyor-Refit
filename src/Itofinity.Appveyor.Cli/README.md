@@ -74,12 +74,12 @@ Or predefine it as an environment variable
 
 Json output is raw and un-formattted by default, --indent creates formatted output
 
-    --output
+    --output {filepath}
 
 Output is to the calling console by default, --output redirects to the specified file
 
 
-    --filter
+    --filter {jsonpath}
 
 Use _jsonpath_ to extract and output only sub-sections, values etc from the main Json response
 
