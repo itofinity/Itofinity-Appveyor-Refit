@@ -19,8 +19,6 @@ configuration:
 
 image: Visual Studio 2017
 
-platform: Any CPU
-
 before_build:
   - dotnet restore
 
