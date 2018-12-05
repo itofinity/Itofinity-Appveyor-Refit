@@ -32,7 +32,7 @@ assembly_info:
   assembly_informational_version: '{version}-{branch}'
 
 build_script:
-  - dotnet build "Itofinity.Appveyor.Refit.sln" /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /consoleloggerparameters:Verbosity=minimal /maxcpucount /nodeReuse:true /target:"Build" /property:Configuration="%configuration%";Platform="%platform%";RunCodeAnalysis=true
+  - msbuild "Itofinity.Appveyor.Refit.sln" /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /consoleloggerparameters:Verbosity=minimal /maxcpucount /nodeReuse:true /target:"Build" /property:Configuration="%configuration%";Platform="%platform%";RunCodeAnalysis=true
 
 artifacts:
   - path: Deploy\mercurial_credential_manager
