@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
@@ -14,7 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Itofinity.Appveyor.Cli.Ext\Itofinity.Appveyor.Cli.Ext.csproj" />
+    <PackageReference Include="Microsoft.Composition" Version="1.0.31" />
+    <PackageReference Include="NLog" Version="4.5.11" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Itofinity.Appveyor.Refit\Itofinity.Appveyor.Refit.csproj" />
     <ProjectReference Include="..\Itofinity.Cli.Utils\Itofinity.Refit.Cli.Utils.csproj" />
   </ItemGroup>

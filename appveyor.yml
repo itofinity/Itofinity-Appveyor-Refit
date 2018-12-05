@@ -1,0 +1,67 @@
+version: '0.1.{build}'
+
+clone_depth: 10
+
+environment:
+    GitEmail: ci@appveyor.com
+    GitAuthor: ci
+    GitUsername: mminns
+    GitPassword: 
+      secure: /GXo1m4yXO8eIbjXBMBOVkC5d05AvG0/+03CmoHZBlsoPp3mnSwDXKLA6CpKNAs3
+
+skip_tags: true
+
+skip_commits:
+  author: ci
+
+configuration:
+  - Release
+
+image: Visual Studio 2017
+
+platform: Any CPU
+
+before_build:
+  - dotnet restore
+
+assembly_info:
+  patch: true
+  file: SharedAssemblyInfo.cs
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}-{branch}'
+
+build_script:
+  - dotnet build "Itofinity.Appveyor.Refit.sln" /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /consoleloggerparameters:Verbosity=minimal /maxcpucount /nodeReuse:true /target:"Build" /property:Configuration="%configuration%";Platform="%platform%";RunCodeAnalysis=true
+
+artifacts:
+  - path: Deploy\mercurial_credential_manager
+    name: mcmw-v$(appveyor_build_version)
+    type: zip
+
+
+test:
+  assemblies:
+    - '*.Test\bin\$(configuration)\*.Test*.dll'
+
+cache:
+  - packages -> **\packages.config
+
+matrix:
+  fast_finish: true
+
+on_success:
+  - ps : .\appveyor-tag-repository.ps1
+
+deploy:
+  release: mcmw-v$(appveyor_build_version)
+  description: 'Mercurial Credential Manager for Windows Release'
+  provider: GitHub
+  auth_token:
+    secure: /GXo1m4yXO8eIbjXBMBOVkC5d05AvG0/+03CmoHZBlsoPp3mnSwDXKLA6CpKNAs3 # your encrypted token from GitHub
+  artifact: mcmw-v$(appveyor_build_version)
+  draft: false
+  prerelease: FALSE
+  on:
+    branch: master                 # release from master branch only
+ 

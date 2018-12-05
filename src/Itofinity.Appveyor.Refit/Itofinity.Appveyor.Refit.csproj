@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 AppVeyor REST API
 
@@ -17,7 +17,14 @@ Contact: team@appveyor.com
             OpenAPI spec version: 0.20181117.0
             Contact: team@appveyor.com
         </Description>
+        <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+        <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+        <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
     </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Include="..\SharedAssemblyInfo.cs" Link="SharedAssemblyInfo.cs" />
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Refit" Version="4.0.0-build.16" />

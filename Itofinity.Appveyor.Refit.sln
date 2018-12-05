@@ -8,9 +8,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itofinity.Appveyor.Refit", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itofinity.Appveyor.Refit.Test", "src\Itofinity.Appveyor.Refit.Test\Itofinity.Appveyor.Refit.Test.csproj", "{D0DF97B2-15CF-4774-8E8D-A0E062F6236A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itofinity.Appveyor.Refit.Test.Integration", "src\Itofinity.Appveyor.Refit.Test.Integration\Itofinity.Appveyor.Refit.Test.Integration.csproj", "{7631897E-6AF1-4398-925B-8797F3D2FA1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itofinity.Appveyor.Refit.Test.Integration", "src\Itofinity.Appveyor.Refit.Test.Integration\Itofinity.Appveyor.Refit.Test.Integration.csproj", "{7631897E-6AF1-4398-925B-8797F3D2FA1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itofinity.Appveyor.Cli", "src\Itofinity.Appveyor.Cli\Itofinity.Appveyor.Cli.csproj", "{AD30F758-33D8-4899-B38F-0E96334D6C8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itofinity.Appveyor.Cli", "src\Itofinity.Appveyor.Cli\Itofinity.Appveyor.Cli.csproj", "{AD30F758-33D8-4899-B38F-0E96334D6C8B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itofinity.Appveyor.Cli.Ext", "src\Itofinity.Appveyor.Cli.Ext\Itofinity.Appveyor.Cli.Ext.csproj", "{52087B4A-5931-4F02-B037-3130DC41BAAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itofinity.Refit.Cli.Utils", "src\Itofinity.Cli.Utils\Itofinity.Refit.Cli.Utils.csproj", "{96B2CFE8-DCEC-4E48-80F6-01A110FCBD51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AF143739-A2E2-4B91-B573-59C3D3D37313}"
+	ProjectSection(SolutionItems) = preProject
+		src\SharedAssemblyInfo.cs = src\SharedAssemblyInfo.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -37,8 +46,19 @@ Global
 		{AD30F758-33D8-4899-B38F-0E96334D6C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD30F758-33D8-4899-B38F-0E96334D6C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD30F758-33D8-4899-B38F-0E96334D6C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52087B4A-5931-4F02-B037-3130DC41BAAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52087B4A-5931-4F02-B037-3130DC41BAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52087B4A-5931-4F02-B037-3130DC41BAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52087B4A-5931-4F02-B037-3130DC41BAAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96B2CFE8-DCEC-4E48-80F6-01A110FCBD51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96B2CFE8-DCEC-4E48-80F6-01A110FCBD51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96B2CFE8-DCEC-4E48-80F6-01A110FCBD51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96B2CFE8-DCEC-4E48-80F6-01A110FCBD51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A43C2B7-2BC7-4793-893E-CEE65D578EB5}
 	EndGlobalSection
 EndGlobal
