@@ -37,7 +37,6 @@ build_script:
       dotnet pack -c release  -p:PackageVersion=$env:APPVEYOR_BUILD_VERSION
 
 after_build:
-  allow_failures:
   - ps: |
       dotnet publish -c release --runtime win-x64 .\src\Itofinity.Appveyor.Cli\Itofinity.Appveyor.Cli.csproj
 
