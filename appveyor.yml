@@ -35,7 +35,7 @@ build_script:
       dotnet pack -c release  -p:PackageVersion=$env:APPVEYOR_BUILD_VERSION
 
 artifacts:
-  - path: /.*$(APPVEYOR_BUILD_VERSION)*\.nupkg/ 
+  - path: '**\*$(APPVEYOR_BUILD_VERSION).nupkg.
  
 
 
