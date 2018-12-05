@@ -32,7 +32,7 @@ assembly_info:
   assembly_informational_version: '{version}-{branch}'
 
 build_script:
-  - ps: >-
+  - ps: |
       dotnet build "Itofinity.Appveyor.Refit.sln"
       dotnet pack -p:PackageVersion=$(version)
       dotnet publish --runtime win-x64
