@@ -39,11 +39,6 @@ artifacts:
  
 
 
-test_script:
-  - dotnet test --filter TestCategory="NONE"
-
-
-
 cache:
   - packages -> **\packages.config
 
