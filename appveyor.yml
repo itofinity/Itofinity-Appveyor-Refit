@@ -41,6 +41,11 @@ artifacts:
 
 test_script:
   - dotnet test
+  categories:
+    only:
+      - DONOTHING
+
+
 
 cache:
   - packages -> **\packages.config
