@@ -83,4 +83,63 @@ Output is to the calling console by default, --output redirects to the specified
 
 Use _jsonpath_ to extract and output only sub-sections, values etc from the main Json response
 
- 
+ ## Examples
+
+    >Itofinity.Appveyor.Cli --help
+
+
+    Usage: Itofinity Appveyor CLI [options] [command]
+
+    Options:
+    -?|-h|--help    Show help information
+    -v|--verbosity  log verbosity
+    -l|--log        log file path
+
+    Commands:
+    add-collaborator                      Porcelain command for Add Collaborator Api
+    add-environment                       Porcelain command for Add Environment Api
+    add-project                           Porcelain command for Add Project Api
+    add-role                              Porcelain command for Add Role Api
+    add-user                              Porcelain command for Add User Api
+    cancel-build                          Porcelain command for Cancel Build Api
+    cancel-deployment                     Porcelain command for Cancel Deployment Api
+    ...
+
+
+
+
+    >Itofinity.Appveyor.Cli get-projects --help
+
+
+    Usage: Itofinity Appveyor CLI get-projects [options]
+
+    Options:
+    -?|-h|--help     Show help information
+    -t|--token       An authentication Token
+    -i|--indent      Format JSON output
+    -o|--outputPath  Redirect output to the specified file
+    -f|--filter      Filter JSON output
+
+
+
+    >Itofinity.Appveyor.Cli get-projects -t a1a1a1a1a1a1a1a1a1a
+    [{"projectId":147759,"accountName":"mminns","name":"my-project","slug":"my-project","created":"2015-10-15T22:16:45.445205-07:00","accountId":12495,"builds":[{"branch":"master","buildId":1642793, ... }]
+
+
+    Itofinity.Appveyor.Cli get-projects -t a1a1a1a1a1a1a1a1a1a --indent
+    [
+        {
+            "projectId": 147759,
+            "accountName": "mminns",
+            "name": "my-project",
+            "slug": "my-project",
+            "created": "2015-10-15T22:16:45.445205-07:00",
+            "accountId": 12495,
+            "builds":  [
+                {
+                    "branch": "master",
+                    "buildId": 1642793,
+                    ...
+        }
+    ]
+
