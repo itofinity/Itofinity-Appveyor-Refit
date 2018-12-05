@@ -41,7 +41,7 @@ after_build:
 
 artifacts:
   - path: '**\*$(APPVEYOR_BUILD_VERSION).nupkg'
-  - path: '.\src\Itofinit.Appveyor.Cli\$(configuration)\netcoreapp2.1\win-x64\publish'
+  - path: '.\src\Itofinity.Appveyor.Cli\$(configuration)\netcoreapp2.1\win-x64\publish'
     name: apv-cli-v$(APPVEYOR_BUILD_VERSION)-$(configuration)-win-x64
     type: zip
  
@@ -68,5 +68,5 @@ deploy:
   on:
     branch: master                 # release from master branch only
 
-on_finish:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+#on_finish:
+#  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
