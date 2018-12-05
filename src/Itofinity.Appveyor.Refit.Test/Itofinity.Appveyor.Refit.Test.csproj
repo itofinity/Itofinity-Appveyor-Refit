@@ -16,7 +16,6 @@
             OpenAPI spec version: 0.20181117.0
             Contact: team@appveyor.com
         </Description>
-      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
       <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
       <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
       <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
