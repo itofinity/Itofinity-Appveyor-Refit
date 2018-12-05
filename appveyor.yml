@@ -32,7 +32,12 @@ assembly_info:
   assembly_informational_version: '{version}-{branch}'
 
 build_script:
-  - dotnet build "Itofinity.Appveyor.Refit.sln" ; dotnet pack -p:PackageVersion=$(appveyor_build_version); dotnet publish --runtime win-x64; dotnet publish --runtime linux-x64; dotnet publish --runtime osx-x64; 
+  - ps: >-
+      dotnet build "Itofinity.Appveyor.Refit.sln"
+      dotnet pack -p:PackageVersion=$(appveyor_build_version)
+      dotnet publish --runtime win-x64
+      dotnet publish --runtime linux-x64
+      dotnet publish --runtime osx-x64 
 
 artifacts:
   - path: '**\src\**\*.nupkg'
