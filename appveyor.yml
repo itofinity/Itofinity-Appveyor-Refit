@@ -32,10 +32,19 @@ assembly_info:
   assembly_informational_version: '{version}-{branch}'
 
 build_script:
-  - dotnet build "Itofinity.Appveyor.Refit.sln" 
+  - dotnet build "Itofinity.Appveyor.Refit.sln" ; dotnet pack -p:PackageVersion=$(appveyor_build_version); dotnet publish --runtime win-x64; dotnet publish --runtime linux-x64; dotnet publish --runtime osx-x64; 
 
 artifacts:
   - path: '**\src\**\*.nupkg'
+  - path: 'src\Itofinity.Appveyor.Cli\bin\$(configuration)\netcoreapp2.1\win-x64\publish'
+    name: apv-cli-v$(appveyor_build_version)-$(configuration)-win-x64
+    type: zip
+  - path: 'src\Itofinity.Appveyor.Cli\bin\$(configuration)\netcoreapp2.1\linux-x64\publish'
+    name: apv-cli-v$(appveyor_build_version)-$(configuration)-linux-x64
+    type: zip
+  - path: 'src\Itofinity.Appveyor.Cli\bin\$(configuration)\netcoreapp2.1\osx-x64\publish'
+    name: apv-cli-v$(appveyor_build_version)-$(configuration)-osx-x64
+    type: zip
 
 
 test_script:
