@@ -35,9 +35,9 @@ build_script:
   - ps: |
       dotnet build "Itofinity.Appveyor.Refit.sln"
       dotnet pack -p:PackageVersion=$env:APPVEYOR_BUILD_VERSION
-      dotnet publish --runtime win-x64 .\src\Itofinity.Appveyor.Cli\
-      dotnet publish --runtime linux-x64 .\src\Itofinity.Appveyor.Cli\
-      dotnet publish --runtime osx-x64 .\src\Itofinity.Appveyor.Cli\
+      dotnet publish --framework netcoreapp2.1 --runtime win-x64 .\src\Itofinity.Appveyor.Cli\
+      dotnet publish --framework netcoreapp2.1 --runtime linux-x64 .\src\Itofinity.Appveyor.Cli\
+      dotnet publish --framework netcoreapp2.1 --runtime osx-x64 .\src\Itofinity.Appveyor.Cli\
 
 artifacts:
   - path: /.*\.nupkg/ 
