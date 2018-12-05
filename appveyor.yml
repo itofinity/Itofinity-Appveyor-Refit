@@ -34,7 +34,7 @@ assembly_info:
 build_script:
   - ps: |
       dotnet build "Itofinity.Appveyor.Refit.sln"
-      dotnet pack -p:PackageVersion=$(version)
+      dotnet pack -p:PackageVersion=$env:APPVEYOR_BUILD_VERSION
       dotnet publish --runtime win-x64
       dotnet publish --runtime linux-x64
       dotnet publish --runtime osx-x64 
@@ -42,13 +42,13 @@ build_script:
 artifacts:
   - path: /.*\.nupkg/ 
   - path: 'src\Itofinity.Appveyor.Cli\bin\$(configuration)\netcoreapp2.1\win-x64\publish'
-    name: apv-cli-v$(version)-$(configuration)-win-x64
+    name: apv-cli-v$(APPVEYOR_BUILD_VERSION)-$(configuration)-win-x64
     type: zip
   - path: 'src\Itofinity.Appveyor.Cli\bin\$(configuration)\netcoreapp2.1\linux-x64\publish'
-    name: apv-cli-v$(version)-$(configuration)-linux-x64
+    name: apv-cli-v$(APPVEYOR_BUILD_VERSION)-$(configuration)-linux-x64
     type: zip
   - path: 'src\Itofinity.Appveyor.Cli\bin\$(configuration)\netcoreapp2.1\osx-x64\publish'
-    name: apv-cli-v$(version)-$(configuration)-osx-x64
+    name: apv-cli-v$(APPVEYOR_BUILD_VERSION)-$(configuration)-osx-x64
     type: zip
 
 
@@ -65,12 +65,12 @@ on_success:
   - ps : .\appveyor-tag-repository.ps1
 
 deploy:
-  release: apv-cli-v$(version)-$(configuration)
+  release: apv-cli-v$(APPVEYOR_BUILD_VERSION)-$(configuration)
   description: 'AppVeyor Cli Release'
   provider: GitHub
   auth_token:
     secure: /GXo1m4yXO8eIbjXBMBOVkC5d05AvG0/+03CmoHZBlsoPp3mnSwDXKLA6CpKNAs3 # your encrypted token from GitHub
-  artifact: /.*\.nupkg/ , apv-cli-v$(version)-$(configuration)-win-x64, apv-cli-v$(version)-$(configuration)-linux-x64, apv-cli-v$(version)-$(configuration)-osx-x64
+  artifact: /.*\.nupkg/ , apv-cli-v$(APPVEYOR_BUILD_VERSION)-$(configuration)-win-x64, apv-cli-v$(APPVEYOR_BUILD_VERSION)-$(configuration)-linux-x64, apv-cli-v$(APPVEYOR_BUILD_VERSION)-$(configuration)-osx-x64
   draft: false
   prerelease: FALSE
   on:
